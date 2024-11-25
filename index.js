@@ -39,8 +39,11 @@ const User = mongoose.model('User', userSchema);
 
 // Initialize WhatsApp Client
 const client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: { headless: true }
+    authStrategy: new LocalAuth(), // your authstrategy here
+    puppeteer: {
+        // puppeteer args here
+    },
+    
 });
 
 // Generate QR Code for WhatsApp Web
