@@ -41,7 +41,9 @@ const User = mongoose.model('User', userSchema);
 const client = new Client({
     authStrategy: new LocalAuth(), // your authstrategy here
     puppeteer: {
-        // puppeteer args here
+        executablePath: '/usr/bin/chromium-browser', // Specify the path to the Chromium executable
+        headless: true, // Run in headless mode
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
     },
     
 });
